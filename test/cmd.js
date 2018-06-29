@@ -68,7 +68,9 @@ describe('express(1)', function () {
         '  "version": "0.0.0",\n' +
         '  "private": true,\n' +
         '  "scripts": {\n' +
-        '    "start": "node ./bin/www"\n' +
+        '    "start": "node ./bin/www",\n' +
+        '    "dev": "nodemon ./bin/www",\n' +
+        '    "debugger": "DEBUG=*:* npm run dev"\n' +
         '  },\n' +
         '  "dependencies": {\n' +
         '    "body-parser": "~1.18.2",\n' +

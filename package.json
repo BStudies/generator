@@ -9,7 +9,8 @@
     "Douglas Christopher Wilson <doug@somethingdoug.com>",
     "Guillermo Rauch <rauchg@gmail.com>",
     "Jonathan Ong <me@jongleberry.com>",
-    "Roman Shtylman <shtylman+expressjs@gmail.com>"
+    "Roman Shtylman <shtylman+expressjs@gmail.com>",
+    "Brandon Hew <digihew@gmail.com>"
   ],
   "keywords": [
     "express",
@@ -27,7 +28,10 @@
   "dependencies": {
     "commander": "2.11.0",
     "ejs": "2.5.7",
+    "express-react-views": "^0.10.5",
     "mkdirp": "0.5.1",
+    "react": "^16.4.1",
+    "react-dom": "^16.4.1",
     "sorted-object": "2.0.1"
   },
   "main": "bin/express-cli.js",

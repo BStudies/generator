@@ -225,6 +225,10 @@ function createApplication (name, path) {
           copyTemplate('vash/layout.vash', path + '/views/layout.vash')
           copyTemplate('vash/error.vash', path + '/views/error.vash')
           break
+        case 'jsx':
+          copyTemplate('jsx/index.jsx', path + '/views/index.jsx')
+          copyTemplate('jsx/error.jsx', path + '/views/error.jsx')
+          break
       }
       complete()
     })
@@ -256,6 +260,12 @@ function createApplication (name, path) {
         app.locals.view = {
           engine: 'dust',
           render: 'adaro.dust()'
+        }
+        break
+      case 'jsx':
+        app.locals.view = {
+          engine: 'jsx',
+          render: "require('express-react-views').createEngine()"
         }
         break
       default:
@@ -309,6 +319,11 @@ function createApplication (name, path) {
         break
       case 'vash':
         pkg.dependencies['vash'] = '~0.12.2'
+        break
+      case 'jsx':
+        pkg.dependencies['express-react-views'] = '^0.10.5'
+        pkg.dependencies['react'] = '^16.4.1'
+        pkg.dependencies['react-dom'] = '^16.4.1'
         break
     }
 
@@ -444,6 +459,7 @@ function main () {
     if (program.hbs) program.view = 'hbs'
     if (program.hogan) program.view = 'hjs'
     if (program.pug) program.view = 'pug'
+    if (program.jsx) program.view = 'jsx'
   }
 
   // Default view engine
